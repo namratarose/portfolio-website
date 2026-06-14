@@ -328,7 +328,7 @@ export function HeroSection() {
             transition={{ delay: 2.2, duration: 0.7 }}
           >
             <p className="text-sm text-white/35 font-mono tracking-wide max-w-sm mx-auto">
-              Backend engineer at KGeN — distributed systems, AI data pipelines, and secure microservices.
+              Backend engineer at KGeN — microservices, AI data pipelines, and a lot still to learn.
             </p>
           </motion.div>
         )}

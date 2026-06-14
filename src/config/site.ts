@@ -17,13 +17,12 @@ export const siteConfig: SiteConfig = {
     email: 'namrata.kesar10@gmail.com',
     location: 'Bangalore, India',
     phone: '+91 9140823891',
-    bio: 'Backend Software Engineer with 1+ years building distributed microservices, AI-powered data pipelines, and secure OAuth workflows at KGeN. I turn complex engineering problems into elegant systems.',
+    bio: 'Backend engineer about a year into my career at KGeN, working on microservices, AI data pipelines, and OAuth security in Go, NestJS, and AWS. Still early in the journey and genuinely love learning — every project teaches me something new.',
     taglines: [
       'Backend Engineer',
-      'Systems Architect',
-      'AWS Infrastructure',
-      'Distributed Systems',
-      'AI Pipeline Engineer',
+      'Go · NestJS · AWS',
+      'AI Data Pipelines',
+      'Always Learning',
     ],
     education: {
       degree: 'B.Tech, Computer Science and Engineering',

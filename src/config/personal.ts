@@ -54,7 +54,7 @@ export const experiences: Experience[] = [
     endDate: 'Present',
     location: 'Bangalore, India',
     description:
-      'Full-time backend engineer building AI-assisted data pipelines, distributed systems, and infrastructure tooling powering KGeN\'s gaming and Web3 platform.',
+      'Full-time backend engineer building AI-assisted data pipelines, microservices, and infrastructure tooling at KGeN.',
     techStack: ['Go', 'NestJS', 'AWS', 'DynamoDB', 'S3', 'Redis', 'PostgreSQL', 'OpenAI GPT-4o', 'Sarvam AI', 'AWS Glue'],
     companyUrl: 'https://kgen.io',
     achievements: [
@@ -69,9 +69,9 @@ export const experiences: Experience[] = [
       },
       {
         id: 'poe-card-system',
-        title: 'POE Card System',
+        title: 'Proof of Expertise Card System',
         description:
-          'Designed and built a standalone Proof-of-Engagement card system with 6 REST APIs using Go, S3, DynamoDB, and OpenAI GPT-4o. Launched as a standalone HumynLabs product.',
+          'Built a Proof-of-Expertise card system with 6 REST APIs using Go, S3, DynamoDB, and OpenAI GPT-4o for content enrichment.',
         metric: '6 production REST APIs',
         type: 'feature',
         tags: ['Go', 'DynamoDB', 'S3', 'OpenAI GPT-4o'],
@@ -144,10 +144,10 @@ export const experiences: Experience[] = [
         tags: ['NestJS', 'JWT', 'DynamoDB', 'Microservices', 'API Gateway'],
       },
       {
-        id: 'pog-nft-concurrency',
-        title: 'POG NFT Go-Routine Concurrency + Redis Caching',
+        id: 'nft-concurrency',
+        title: 'NFT Service Concurrency + Redis Caching',
         description:
-          'Optimised the POG NFT processing pipeline with Go goroutine concurrency patterns and Redis caching, significantly reducing latency for NFT minting and lookups.',
+          'Improved an NFT processing service with Go goroutine concurrency and Redis caching, reducing latency for minting and lookups.',
         metric: '30-50% performance improvement',
         type: 'performance',
         tags: ['Go', 'Redis', 'Concurrency', 'NFT', 'Caching'],
@@ -264,16 +264,16 @@ export const skillCategories: SkillCategory[] = [
 export const projects: Project[] = [
   {
     id: 'poe-card-system',
-    title: 'POE Card System',
+    title: 'Proof of Expertise Card System',
     description:
-      'Proof-of-Engagement card system with 6 REST APIs. Generates personalised engagement cards using OpenAI GPT-4o based on user activity, stored on S3 and indexed in DynamoDB. Launched as a standalone HumynLabs product.',
+      'Proof-of-Expertise card system with 6 REST APIs. Generates enriched cards using OpenAI GPT-4o, stored on S3 and indexed in DynamoDB.',
     techStack: {
       primary: ['Go', 'OpenAI GPT-4o'],
       secondary: ['REST APIs'],
       infra: ['DynamoDB', 'AWS S3'],
     },
     links: [],
-    metrics: ['6 production REST APIs', 'Launched as standalone HumynLabs product'],
+    metrics: ['6 production REST APIs', 'GPT-4o content enrichment'],
     featured: true,
     category: 'AI / Backend',
     status: 'production',
@@ -343,8 +343,8 @@ export const projects: Project[] = [
     status: 'production',
   },
   {
-    id: 'hl-annotation-orchestrator',
-    title: 'HL Annotation Orchestrator',
+    id: 'annotation-service',
+    title: 'Multilingual Annotation Service',
     description:
       'Multilingual annotation orchestration service built in Go that manages parallel annotation tracks for 5+ Indian languages, coordinating task assignment, progress tracking, and result aggregation via PostgreSQL.',
     techStack: {

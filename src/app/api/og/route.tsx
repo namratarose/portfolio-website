@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
   const title = searchParams.get('title') ?? 'Namrata Kesarwani'
   const role = searchParams.get('role') ?? 'Backend Software Engineer · KGeN'
   const subtitle =
-    searchParams.get('subtitle') ?? 'Distributed Systems · Blockchain · AI Pipelines'
+    searchParams.get('subtitle') ?? 'Backend · Microservices · AI Pipelines'
 
   return new ImageResponse(
     (

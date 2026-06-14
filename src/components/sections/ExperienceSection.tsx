@@ -47,7 +47,7 @@ const STAGES: Stage[] = [
     achievements: [
       { text: 'Built NestJS proxy auth middleware routing requests with JWT, admin strategy & DynamoDB device whitelisting', metric: '10+ microservices' },
       { text: 'Migrated LLM resume parser from GCP Cloud Functions to AWS Lambda with Secrets Manager + cold-start optimization' },
-      { text: 'Optimized POG NFT service with Go routines + Redis caching, improving leaderboard performance', metric: '30–50% faster' },
+      { text: 'Improved an NFT service’s performance using Go goroutines and Redis caching', metric: '30–50% faster' },
       { text: 'Extended localization with translation interceptors across quest-list, campaign, and web-banner APIs' },
     ],
     tech: ['NestJS', 'TypeScript', 'Go', 'Python', 'AWS Lambda', 'DynamoDB', 'Redis'],
@@ -63,7 +63,7 @@ const STAGES: Stage[] = [
     isLive: true,
     achievements: [
       { text: 'Integrated Sarvam AI batch transcription pipeline, cutting annotation turnaround', metric: '40–60% reduction' },
-      { text: 'Designed POG card system end-to-end in Go (6 REST APIs, S3, DynamoDB, OpenAI GPT-4o) — launched as a standalone HumynLabs product' },
+      { text: 'Built a Proof-of-Expertise card system in Go — 6 REST APIs with S3 storage and OpenAI GPT-4o enrichment' },
       { text: 'Implemented Redis distributed locking across Google/Apple/Discord OAuth, eliminating race conditions', metric: '100k+ users' },
       { text: 'Built a project association service (Go, PostgreSQL) supporting 5+ Indian languages in parallel tracks' },
       { text: 'Designed AWS Glue ETL pipelines syncing records daily', metric: '1.5–2 lakh records / day' },

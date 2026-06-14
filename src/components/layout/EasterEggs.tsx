@@ -257,8 +257,8 @@ function TerminalModal({ active, onClose }: { active: boolean; onClose: () => vo
           setLines(prev => [
             ...prev,
             'Go • NestJS • TypeScript • Python • AWS • DynamoDB',
-            'Redis • Kafka • Docker • Kubernetes • Blockchain',
-            'React • Next.js • PostgreSQL • Distributed Systems',
+            'Redis • Docker • Kubernetes • PostgreSQL • Celery',
+            'REST APIs • Microservices • ETL • System Design',
           ])
           break
         case 'coffee':

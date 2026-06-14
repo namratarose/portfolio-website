@@ -39,7 +39,7 @@ const DEV_MODES: DevMode[] = [
       'Microservices multiply across the cluster autonomously',
     ],
     stats: { speed: 88, scalability: 95, reliability: 92, dx: 90 },
-    realCase: 'Built KGeN\'s core gaming reward microservices handling 10k+ concurrent reward events with NestJS event-driven architecture.',
+    realCase: 'Built a NestJS proxy auth middleware at KGeN that routes requests across 10+ microservices with JWT validation.',
   },
   {
     id: 1,
@@ -57,7 +57,7 @@ const DEV_MODES: DevMode[] = [
       'Memory leaks simply cease to exist in this form',
     ],
     stats: { speed: 99, scalability: 97, reliability: 95, dx: 82 },
-    realCase: 'Wrote Go services for high-throughput blockchain event listeners processing 50k+ transactions per minute without breaking a sweat.',
+    realCase: 'Wrote Go services for a Proof-of-Expertise card system (6 REST APIs) and sped up an NFT service 30–50% with goroutines + Redis caching.',
   },
   {
     id: 2,
@@ -75,7 +75,7 @@ const DEV_MODES: DevMode[] = [
       'Lambda functions appear and disappear like quantum particles',
     ],
     stats: { speed: 85, scalability: 99, reliability: 97, dx: 80 },
-    realCase: 'Architected multi-region AWS infrastructure for KGeN\'s gaming platform — SQS, Lambda, DynamoDB, and CloudWatch living in perfect harmony.',
+    realCase: 'Migrated an LLM resume parser to AWS Lambda and built S3 + AWS Glue ETL pipelines processing ~1.5–2 lakh records daily.',
   },
   {
     id: 3,
@@ -93,25 +93,7 @@ const DEV_MODES: DevMode[] = [
       'Pub/Sub channels transmit messages at the speed of RAM',
     ],
     stats: { speed: 100, scalability: 90, reliability: 88, dx: 85 },
-    realCase: 'Eliminated race conditions in OAuth token refresh flow using Redis atomic operations — dropped duplicate token issuance by 100%.',
-  },
-  {
-    id: 4,
-    icon: '🔗',
-    name: 'Blockchain Mode',
-    shortName: 'CHAIN',
-    tagline: 'The Chain Master',
-    color: '#F7931A',
-    glow: 'rgba(247,147,26,0.5)',
-    bgGradient: 'linear-gradient(135deg, rgba(247,147,26,0.15) 0%, rgba(247,147,26,0.03) 100%)',
-    borderColor: 'rgba(247,147,26,0.4)',
-    powers: [
-      'Smart contracts deploy themselves with complete determinism',
-      'Decentralized transactions flow through fingers like water',
-      'Immutable logs materialize — nothing can be altered or denied',
-    ],
-    stats: { speed: 72, scalability: 93, reliability: 99, dx: 75 },
-    realCase: 'Built Polygon-based NFT reward system for KGeN gamers — on-chain asset distribution at scale with gas-optimized batch transactions.',
+    realCase: 'Used Redis distributed locking to remove race conditions in OAuth token-refresh flows across Google/Apple/Discord login.',
   },
   {
     id: 5,
@@ -129,7 +111,7 @@ const DEV_MODES: DevMode[] = [
       'Data quality issues are detected before they dare exist',
     ],
     stats: { speed: 80, scalability: 94, reliability: 91, dx: 88 },
-    realCase: 'Built end-to-end audio labeling pipeline at Karya — automated transcription + review workflow processing 100k+ audio clips for ASR model training.',
+    realCase: 'Integrated Sarvam AI transcription into the annotation pipeline at KGeN, helping cut annotation turnaround by 40–60%.',
   },
   {
     id: 6,
@@ -147,7 +129,7 @@ const DEV_MODES: DevMode[] = [
       'JWT expiry edge cases are handled before they clock out',
     ],
     stats: { speed: 85, scalability: 88, reliability: 99, dx: 83 },
-    realCase: 'Fixed critical OAuth race condition at KGeN — Redis atomic SETNX eliminated duplicate refresh tokens across 50k+ DAU gaming sessions.',
+    realCase: 'Added Redis atomic locking (SETNX) to OAuth refresh flows so concurrent logins stop creating duplicate tokens.',
   },
   {
     id: 7,
@@ -165,7 +147,7 @@ const DEV_MODES: DevMode[] = [
       'Infinite scale achieved — single-digit millisecond reads',
     ],
     stats: { speed: 95, scalability: 99, reliability: 96, dx: 79 },
-    realCase: 'Designed DynamoDB schema for KGeN\'s player reward ledger — careful GSI planning enabled 5 distinct query patterns with zero table scans.',
+    realCase: 'Modeled DynamoDB access patterns and GSIs for the card system and device whitelisting to keep lookups efficient.',
   },
   {
     id: 8,
@@ -183,7 +165,7 @@ const DEV_MODES: DevMode[] = [
       'Automation scripts reproduce faster than the problems they fix',
     ],
     stats: { speed: 75, scalability: 85, reliability: 88, dx: 96 },
-    realCase: 'Automated Karya\'s data labeling ETL — Python scripts reduced manual preprocessing from 8 hours per batch to 12 minutes.',
+    realCase: 'Wrote Python automation and ETL scripts at KGeN, including an LLM-based resume parser that extracts structured details.',
   },
   {
     id: 9,
@@ -201,7 +183,7 @@ const DEV_MODES: DevMode[] = [
       '\'any\' type usage is forbidden within a 10-meter radius',
     ],
     stats: { speed: 83, scalability: 90, reliability: 97, dx: 98 },
-    realCase: 'Enforced strict TypeScript across KGeN\'s backend monorepo — eliminated entire class of runtime null-pointer bugs across 15+ service modules.',
+    realCase: 'Write KGeN backend services in TypeScript + NestJS, leaning on the type system to catch bugs before they ship.',
   },
   {
     id: 10,
@@ -219,25 +201,25 @@ const DEV_MODES: DevMode[] = [
       'Diagrams draw themselves in Excalidraw-compatible clarity',
     ],
     stats: { speed: 82, scalability: 98, reliability: 95, dx: 92 },
-    realCase: 'Designed distributed reward settlement system at KGeN — event-driven architecture with idempotency keys prevented duplicate payouts across retries.',
+    realCase: 'Worked on event-driven flows with idempotency keys so retries stay safe — a part of system design I\'m still actively learning.',
   },
   {
     id: 11,
-    icon: '🚀',
-    name: 'Full Stack Mode',
-    shortName: 'OMNIPOTENT',
-    tagline: 'The Omnipotent Engineer',
+    icon: '🌱',
+    name: 'Learning Mode',
+    shortName: 'LEARNING',
+    tagline: 'The Eager Beginner',
     color: '#7C5CFF',
     glow: 'rgba(124,92,255,0.6)',
     bgGradient: 'linear-gradient(135deg, rgba(124,92,255,0.2) 0%, rgba(97,218,251,0.08) 100%)',
     borderColor: 'rgba(124,92,255,0.5)',
     powers: [
-      'All 11 forms simultaneously active — system remains stable',
-      'Frontend, backend, infra, and prod incidents handled in parallel',
-      'The codebase is both perfectly typed AND infinitely scalable',
+      'Asks a lot of questions — and writes down every answer',
+      'Reads other people\'s code to figure out how things really work',
+      'Gets a little better with every PR review and every bug',
     ],
-    stats: { speed: 95, scalability: 99, reliability: 98, dx: 99 },
-    realCase: 'Shipped KGeN\'s full gaming reward platform end-to-end: NestJS APIs + Go event listeners + DynamoDB + Redis + Polygon blockchain + AWS infra — solo.',
+    stats: { speed: 70, scalability: 72, reliability: 75, dx: 95 },
+    realCase: 'Honestly? Still early in my journey — about a year in. I\'m strongest on backend today and actively going deeper on system design and frontend.',
   },
 ]
 
@@ -494,7 +476,7 @@ function TransformFlash({ color, visible }: { color: string; visible: boolean })
 // ─── Fun Section ──────────────────────────────────────────────────────────────
 
 export function FunSection() {
-  const [activeIndex, setActiveIndex] = useState(11)
+  const [activeIndex, setActiveIndex] = useState(DEV_MODES.length - 1)
   const [isTransforming, setIsTransforming] = useState(false)
   const [showFlash, setShowFlash] = useState(false)
   const [cardVisible, setCardVisible] = useState(true)

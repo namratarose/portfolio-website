@@ -8,10 +8,9 @@ import { education } from '@/config/personal'
 // ─── Highlight stats ──────────────────────────────────────────────────────────
 
 const STATS = [
-  { value: '1+', label: 'Years building backend systems' },
-  { value: '100k+', label: 'Users protected by OAuth locking' },
-  { value: '1.5L+', label: 'Records processed daily (ETL)' },
-  { value: '10+', label: 'Microservices secured' },
+  { value: '~1 yr', label: 'Into my engineering career' },
+  { value: '1.5L+', label: 'Records/day in an ETL pipeline' },
+  { value: '40–60%', label: 'Faster annotation with AI' },
 ] as const
 
 const QUICK_FACTS = [
@@ -53,17 +52,17 @@ export function AboutSection() {
           className="max-w-2xl space-y-4 text-base leading-relaxed text-slate-400"
         >
           <p>
-            I&apos;m a <span className="text-slate-200">backend software engineer</span> at KGeN,
-            where I build distributed microservices, AI-powered data pipelines, and secure
-            authentication systems that run in production for real users.
+            I&apos;m a <span className="text-slate-200">backend engineer</span> at KGeN, about a
+            year into my career. I work mostly in <span className="text-slate-200">Go</span>,{' '}
+            <span className="text-slate-200">NestJS</span>, and{' '}
+            <span className="text-slate-200">AWS</span>, on microservices, AI data pipelines, and
+            authentication flows that run in production.
           </p>
           <p>
-            I like turning fuzzy, complex problems into clean systems — whether that&apos;s
-            eliminating race conditions with distributed locking, cutting annotation turnaround
-            with AI, or moving services to serverless without breaking latency budgets. I work
-            mostly in <span className="text-slate-200">Go</span>,{' '}
-            <span className="text-slate-200">NestJS</span>, and{' '}
-            <span className="text-slate-200">AWS</span>.
+            I&apos;m still early in my journey and that&apos;s the part I enjoy most — every task
+            teaches me something. I&apos;ve gotten to work on real problems like fixing OAuth race
+            conditions, integrating AI transcription, and building ETL pipelines, and I&apos;m
+            actively trying to get better at system design and write cleaner code with each project.
           </p>
         </motion.div>
 
@@ -72,7 +71,7 @@ export function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4"
+          className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-3"
         >
           {STATS.map((stat) => (
             <div
