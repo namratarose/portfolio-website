@@ -29,7 +29,7 @@ const spaceGrotesk = Space_Grotesk({
 // ─── Metadata ──────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://namratakesarwani.dev'),
+  metadataBase: new URL('https://namrata-kesarwani-portfolio.vercel.app'),
   title: {
     default: 'Namrata Kesarwani — OrbitOS Portfolio',
     template: '%s | Namrata Kesarwani',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     'Portfolio',
     'OrbitOS',
   ],
-  authors: [{ name: 'Namrata Kesarwani', url: 'https://namratakesarwani.dev' }],
+  authors: [{ name: 'Namrata Kesarwani', url: 'https://namrata-kesarwani-portfolio.vercel.app' }],
   creator: 'Namrata Kesarwani',
   publisher: 'Namrata Kesarwani',
   robots: {
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://namratakesarwani.dev',
+    url: 'https://namrata-kesarwani-portfolio.vercel.app',
     siteName: 'Namrata Kesarwani — OrbitOS Portfolio',
     title: 'Namrata Kesarwani — OrbitOS Portfolio',
     description:
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
   },
   // Icons are auto-detected from app/icon.svg, app/favicon.ico, app/apple-icon.png
   alternates: {
-    canonical: 'https://namratakesarwani.dev',
+    canonical: 'https://namrata-kesarwani-portfolio.vercel.app',
   },
 }
 
@@ -109,8 +109,8 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Namrata Kesarwani',
-  url: 'https://namratakesarwani.dev',
-  image: 'https://namratakesarwani.dev/avatar.jpg',
+  url: 'https://namrata-kesarwani-portfolio.vercel.app',
+  image: 'https://namrata-kesarwani-portfolio.vercel.app/avatar.jpg',
   sameAs: [
     'https://github.com/namratakesarwani',
     'https://linkedin.com/in/namratakesarwani',

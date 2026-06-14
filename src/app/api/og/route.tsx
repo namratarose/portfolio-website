@@ -190,7 +190,7 @@ export async function GET(request: NextRequest) {
               fontFamily: 'monospace',
             }}
           >
-            namrata.dev
+            namrata-kesarwani-portfolio.vercel.app
           </div>
         </div>
       </div>

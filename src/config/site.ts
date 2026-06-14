@@ -9,8 +9,8 @@ export const siteConfig: SiteConfig = {
   title: 'Namrata Kesarwani — Backend Engineer',
   description:
     'Backend Software Engineer building distributed systems, AI data pipelines, and secure microservices.',
-  url: 'https://namrata.dev',
-  ogImage: 'https://namrata.dev/og.png',
+  url: 'https://namrata-kesarwani-portfolio.vercel.app',
+  ogImage: 'https://namrata-kesarwani-portfolio.vercel.app/og.png',
   author: {
     name: 'Namrata Kesarwani',
     role: 'Backend Software Engineer',

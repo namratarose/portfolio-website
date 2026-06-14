@@ -17,7 +17,7 @@ Disallow: /
 User-agent: Claude-Web
 Disallow: /
 
-Sitemap: https://namrata.dev/sitemap.xml
+Sitemap: https://namrata-kesarwani-portfolio.vercel.app/sitemap.xml
 `
 
   return new NextResponse(content, {

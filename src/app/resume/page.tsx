@@ -19,7 +19,7 @@ export default function ResumePage() {
               <p className="mt-1 text-sm text-slate-500">Namrata Kesarwani — Backend Software Engineer</p>
             </div>
             <a
-              href="/resume.pdf"
+              href="/api/resume"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 self-start rounded-lg border border-[#7C5CFF]/50 bg-[#7C5CFF]/10 px-4 py-2 text-sm font-semibold text-[#c4b5fd] transition-colors hover:bg-[#7C5CFF]/20 hover:text-white"
@@ -31,7 +31,7 @@ export default function ResumePage() {
           {/* PDF viewer */}
           <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-[#0D1321]">
             <object
-              data="/resume.pdf#view=FitH"
+              data="/api/resume#view=FitH"
               type="application/pdf"
               className="h-[80vh] w-full"
               aria-label="Résumé PDF"
@@ -41,7 +41,7 @@ export default function ResumePage() {
                   Your browser can&apos;t display the PDF inline.
                 </p>
                 <a
-                  href="/resume.pdf"
+                  href="/api/resume"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-lg border border-[#7C5CFF]/50 bg-[#7C5CFF]/10 px-4 py-2 text-sm font-semibold text-[#c4b5fd]"
