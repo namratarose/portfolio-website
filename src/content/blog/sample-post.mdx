@@ -1,0 +1,96 @@
+---
+title: "Redis Distributed Locking: Eliminating OAuth Race Conditions"
+excerpt: "How a single SETNX command prevented thousands of duplicate tokens from flooding our OAuth 2.0 flow — and what we learned building distributed locks in production."
+category: "Backend"
+readTime: "8 min read"
+date: "2024-12-10"
+author: "Namrata Kesarwani"
+tags: ["Redis", "OAuth", "Go", "Concurrency"]
+slug: "redis-distributed-locking-oauth"
+---
+
+## The Problem
+
+Our OAuth 2.0 flow at KGeN was minting duplicate access tokens under high concurrency.
+Two requests arriving within 50ms of each other would both pass the "does this user have a token?" check,
+both generate fresh JWTs, and both write to DynamoDB — leaving the second write to silently overwrite the first.
+Users downstream received whichever token DynamoDB last wrote, invalidating the one already in flight.
+
+Under moderate load (\<100 concurrent auth requests) this was invisible. At 500+ concurrent requests
+during a marketing push, duplicate tokens caused downstream API calls to fail with 401s roughly 4% of the time.
+
+### What Is a Race Condition?
+
+A race condition occurs when the correctness of a program depends on the relative timing of concurrent
+operations. In our case: **read → check → write** is a classic *check-then-act* pattern. Without
+coordination, two workers can both read "no token exists," both decide to create one, and both act.
+
+## Redis SET NX to the Rescue
+
+Redis's `SET key value NX PX milliseconds` command is atomic at the Redis level. It sets a key
+*only if it does not already exist*, in a single round-trip. This is the foundation of the
+Redlock-style distributed lock pattern.
+
+For OAuth token issuance, the lock key is scoped to the user ID:
+
+```go
+lockKey := fmt.Sprintf("oauth:lock:%s", userID)
+ok, err := redisClient.SetNX(ctx, lockKey, "1", 5*time.Second).Result()
+if err != nil {
+    return nil, fmt.Errorf("acquiring lock: %w", err)
+}
+if !ok {
+    // Another instance is minting a token — wait and retry
+    return retryGetToken(ctx, userID)
+}
+defer redisClient.Del(ctx, lockKey)
+```
+
+The 5-second TTL is the safety net: if the holder crashes before releasing the lock, it expires
+automatically, preventing a permanent deadlock.
+
+## Implementation in Go
+
+The full implementation wraps the lock in a helper that handles retries with exponential backoff
+and jitter to prevent thundering-herd on lock release:
+
+```go
+func (s *AuthService) IssueToken(ctx context.Context, userID string) (*Token, error) {
+    lock := distributed.NewRedisLock(s.redis, "oauth:lock:"+userID, 5*time.Second)
+
+    acquired, err := lock.TryAcquire(ctx,
+        distributed.WithRetries(3),
+        distributed.WithJitter(50*time.Millisecond),
+    )
+    if err != nil || !acquired {
+        return nil, ErrLockContention
+    }
+    defer lock.Release(ctx)
+
+    // Critical section — only one instance reaches here per userID
+    existing, err := s.store.GetToken(ctx, userID)
+    if err == nil && !existing.IsExpired() {
+        return existing, nil // Token minted while we waited
+    }
+
+    return s.mintNewToken(ctx, userID)
+}
+```
+
+### Production Considerations
+
+A few things bit us before we got this right:
+
+- **Clock skew**: Use Redis server time (`TIME` command) rather than local clocks for TTL calculations on multi-region setups.
+- **Lock extension**: For operations that may exceed the TTL, implement watchdog goroutines that extend the lock before expiry.
+- **Observability**: Emit metrics on lock contention rate. Consistently high contention signals a design issue.
+- **Graceful degradation**: If Redis is unavailable, fall back to optimistic locking at the DynamoDB layer rather than hard-failing auth entirely.
+
+## Results
+
+After shipping distributed locking to production, duplicate token issuance dropped from ~4% under load
+to **zero measured occurrences** over a 30-day observation window. P99 auth latency increased by 8ms
+(acceptable) and support tickets related to invalid tokens stopped entirely.
+
+The lesson: race conditions in auth flows are silent under low load and catastrophic at scale.
+Distributed locks are a cheap insurance policy.
