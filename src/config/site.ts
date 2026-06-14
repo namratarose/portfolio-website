@@ -16,8 +16,7 @@ export const siteConfig: SiteConfig = {
     role: 'Backend Software Engineer',
     email: 'namrata.kesar10@gmail.com',
     location: 'Bangalore, India',
-    phone: '+91 9140823891',
-    bio: 'Backend engineer about a year into my career at KGeN, working on microservices, AI data pipelines, and OAuth security in Go, NestJS, and AWS. Still early in the journey and genuinely love learning — every project teaches me something new.',
+    bio: 'Backend engineer a year into my career at KGeN, working on microservices, AI data pipelines, and OAuth security in Go, NestJS, and AWS. Still early in the journey and genuinely love learning — every project teaches me something new.',
     taglines: [
       'Backend Engineer',
       'Go · NestJS · AWS',
@@ -27,7 +26,7 @@ export const siteConfig: SiteConfig = {
     education: {
       degree: 'B.Tech, Computer Science and Engineering',
       institution: 'Dr. APJ Abdul Kalam Technical University, Lucknow',
-      period: '2021 – 2025',
+      period: '2021 - 2025',
       cgpa: '8.54 / 10',
     },
   },
